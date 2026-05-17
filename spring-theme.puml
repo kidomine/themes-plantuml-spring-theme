@@ -38,41 +38,73 @@ classDiagram {
   .Component {
     LineColor #6DB33F
     BackgroundColor #6DB33F20
+    header {
+      FontStyle bold
+      FontColor #6DB33F
+    }
   }
   .Configuration {
     LineColor #6DB33F
     BackgroundColor #6DB33F20
+    header {
+      FontStyle bold
+      FontColor #6DB33F
+    }
   }
   .Bean {
     LineColor #F1C40F
     BackgroundColor #F1C40F20
     RoundCorner 4
+    header {
+      FontStyle bold
+      FontColor #F1C40F
+    }
   }
 
   ' Soft Web Blue Theme (Web / Presentation)
   .Controller {
     LineColor #2F72B5
     BackgroundColor #2F72B520
+    header {
+      FontStyle bold
+      FontColor #2F72B5
+    }
   }
   .RestController {
     LineColor #2F72B5
     BackgroundColor #2F72B520
+    header {
+      FontStyle bold
+      FontColor #2F72B5
+    }
   }
   .ControllerAdvice {
     LineColor #2F72B5
     BackgroundColor #2F72B520
+    header {
+      FontStyle bold
+      FontColor #2F72B5
+    }
   }
 
   ' Amber Orange Theme (Service / Business Logic)
   .Service {
     LineColor #E67E22
     BackgroundColor #E67E2220
+    header {
+      FontStyle bold
+      FontColor #E67E22
+    }
   }
 
   ' Royal Purple Theme (Data / Repository)
   .Repository {
     LineColor #8E44AD
     BackgroundColor #8E44AD20
+    header {
+      FontStyle bold
+      FontColor #8E44AD
+    }
   }
 }
 
@@ -83,12 +115,20 @@ componentDiagram {
     LineColor #718096
     BackgroundColor #71809620
     LineThickness 1.0
+    header {
+      FontStyle bold
+      FontColor #718096
+    }
   }
   
   ' Style for physical deployment environments / physical hardware blocks
   node {
     LineColor #2F3E46
     BackgroundColor #2F3E4620
+    header {
+      FontStyle bold
+      FontColor #2F3E46
+    }
   }
 
   ' Structural deployment artifacts (e.g., JAR, WAR) mapping to Spring Green
@@ -96,6 +136,10 @@ componentDiagram {
     LineColor #6DB33F
     BackgroundColor #6DB33F20
     RoundCorner 6
+    header {
+      FontStyle bold
+      FontColor #6DB33F
+    }
   }
 
   ' Running instances/subsystems mapped to the structural Slate/Navy palette
@@ -103,6 +147,10 @@ componentDiagram {
     LineColor #2F3E46
     BackgroundColor #2F3E4620
     RoundCorner 4
+    header {
+      FontStyle bold
+      FontColor #2F3E46
+    }
   }
 
   ' --- Custom Infrastructure Stereotypes ---
@@ -111,6 +159,10 @@ componentDiagram {
     LineColor #1D63ED
     BackgroundColor #1D63ED15
     LineThickness 1.5
+    header {
+      FontStyle bold
+      FontColor #1D63ED
+    }
   }
   
   ' AWS Orange
@@ -118,6 +170,10 @@ componentDiagram {
     LineColor #FF9900
     BackgroundColor #FF990015
     LineThickness 1.5
+    header {
+      FontStyle bold
+      FontColor #FF9900
+    }
   }
   
   ' Azure Blue
@@ -125,6 +181,10 @@ componentDiagram {
     LineColor #0078D4
     BackgroundColor #0078D415
     LineThickness 1.5
+    header {
+      FontStyle bold
+      FontColor #0078D4
+    }
   }
 }
 </style>
