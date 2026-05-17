@@ -1,0 +1,54 @@
+skinparam backgroundColor white
+
+<style>
+classDiagram {
+  ' Base style for all classes
+  class {
+    FontColor #2F3E46
+    FontName "Helvetica Neue", Helvetica, Arial, sans-serif
+    FontSize 12
+    RoundCorner 8
+  }
+  
+  ' Spring Green Theme (Core / Beans)
+  .Component {
+    LineColor #6DB33F
+    BackgroundColor #6DB33F20
+  }
+  .Configuration {
+    LineColor #6DB33F
+    BackgroundColor #6DB33F20
+  }
+  .Bean {
+    LineColor #F1C40F
+    BackgroundColor #F1C40F20
+    RoundCorner 4
+  }
+
+  ' Soft Web Blue Theme (Web / Presentation)
+  .Controller {
+    LineColor #2F72B5
+    BackgroundColor #2F72B520
+  }
+  .RestController {
+    LineColor #2F72B5
+    BackgroundColor #2F72B520
+  }
+  .ControllerAdvice {
+    LineColor #2F72B5
+    BackgroundColor #2F72B520
+  }
+
+  ' Amber Orange Theme (Service / Business Logic)
+  .Service {
+    LineColor #E67E22
+    BackgroundColor #E67E2220
+  }
+
+  ' Royal Purple Theme (Data / Repository)
+  .Repository {
+    LineColor #8E44AD
+    BackgroundColor #8E44AD20
+  }
+}
+</style>
