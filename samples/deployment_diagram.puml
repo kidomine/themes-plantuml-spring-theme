@@ -1,0 +1,34 @@
+@startuml
+
+!include ../spring-theme.puml
+
+header Spring Boot Infrastructure Deployment
+
+' Grouping physical structures using 'node'
+node "Cloud Environment" {
+    
+    ' Using 'package' to logically isolate layers
+    package "DMZ / Public Subnet" {
+        component "Reverse Proxy (NGINX)" as Proxy
+    }
+
+    package "Private Application Subnet" {
+        ' Testing the custom Spring component/artifact aesthetics
+        artifact "api-gateway.jar" as Gateway <<artifact>>
+        artifact "customer-service.jar" as ServiceJar <<artifact>>
+        
+        component "API Gateway Instance" as GatewayInst <<component>>
+        component "Customer Service Subsystem" as ServiceInst <<component>>
+    }
+    
+    node "Database Layer" {
+        component "PostgreSQL Cluster" as DB <<component>>
+    }
+}
+
+' Define system communication paths
+Proxy --> GatewayInst : Routes HTTP Traffic
+GatewayInst --> ServiceInst : Proxies Requests
+ServiceInst --> DB : Data Persistence
+
+@enduml

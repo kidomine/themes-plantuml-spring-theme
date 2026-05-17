@@ -1,0 +1,33 @@
+@startuml
+!include ../spring-theme.puml
+
+header Hybrid Multi-Cloud System Overview
+
+' Applying the global cloud infrastructure stereotypes to nodes and packages
+node "Amazon Web Services" <<AWS>> {
+    
+    package "Public VPC Subnet" {
+        component "ALB Gateway" as Gateway <<component>>
+    }
+
+    package "ECS Cluster" {
+        ' Nesting a Docker container rule inside an AWS infrastructure construct
+        node "Spring Boot Container Instance" <<Docker>> {
+            artifact "customer-service.jar" as AppJar <<artifact>>
+        }
+    }
+}
+
+node "Microsoft Azure" <<Azure>> {
+    database "Azure SQL Database" as ManagedDB <<component>>
+}
+
+' --- Refined Interaction Arrow Showcase ---
+
+' Standard HTTP / REST synchronous tracking link
+Gateway -[#1D63ED]-> AppJar : [HTTP/JSON] Forwarding traffic >
+
+' Cross-cloud infrastructure persistent connection line
+AppJar -[#8E44AD].> ManagedDB : [JDBC] Reads/Writes data >
+
+@enduml

@@ -1,0 +1,28 @@
+@startuml
+
+!include ../spring-theme.puml
+
+header Example Class Diagram
+
+skinparam backgroundColor #10101010
+' --- Example Usage Demonstration ---
+
+class MyComponent <<Component>>
+class MyConfig <<Configuration>>
+class MyController <<Controller>>
+class MyService <<Service>>
+class MyRepo <<Repository>>
+
+class AppConfig <<Configuration>> {
+    + {method} <<Bean>> dataSource() : DataSource
+    + {method} <<Bean>> securityFilter() : Filter
+}
+
+class "dataSource() : DataSource" as DataSourceBean <<Bean>>
+
+AppConfig +-- DataSourceBean : @Bean >
+
+MyController --> MyService
+MyService --> MyRepo
+
+@enduml
